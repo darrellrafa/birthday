@@ -86,7 +86,7 @@ export default function Home() {
         <TriggerButton onClick={handleStart} />
       ) : (
         <CelebrationMessage
-          name="My Dearest Friend"
+          name="My Dearest 'Friend'"
           message="May this year bring you as much happiness and joy as you've brought into my life. Keep shining brightly!"
           phase={phase}
           photos={myPhotos}
