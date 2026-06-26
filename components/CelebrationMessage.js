@@ -50,12 +50,12 @@ export default function CelebrationMessage({
       {/* Intro Phase: Rapidly cycling images */}
       {phase === 'intro' && photos.length > 0 && (
         <div style={{ 
-          marginTop: '1rem',
+          marginTop: '0.8rem',
           borderRadius: '16px', 
           overflow: 'hidden',
           boxShadow: '0 8px 30px rgba(225, 29, 72, 0.4)',
-          width: '260px',
-          height: '340px',
+          width: '208px',
+          height: '272px',
           position: 'relative'
         }}>
           {/* Using a standard img tag here instead of Next.js Image to prevent Vercel optimization lag during 150ms rapid cycles */}
@@ -71,8 +71,8 @@ export default function CelebrationMessage({
       {phase === 'gallery' && photos.length > 0 && (
         <div className="animate-fade-in" style={{ 
           width: '100%', 
-          maxWidth: '320px', 
-          marginTop: '1rem' 
+          maxWidth: '256px', 
+          marginTop: '0.8rem' 
         }}>
           <Swiper
             effect={'cards'}
@@ -81,7 +81,7 @@ export default function CelebrationMessage({
             navigation={true}
             pagination={{ clickable: true }}
             className="mySwiper"
-            style={{ padding: '20px 0' }}
+            style={{ padding: '16px 0' }}
           >
             {photos.map((src, index) => (
               <SwiperSlide key={index} style={{
@@ -102,7 +102,7 @@ export default function CelebrationMessage({
               </SwiperSlide>
             ))}
           </Swiper>
-          <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', opacity: 0.6, letterSpacing: '1px', textTransform: 'uppercase' }}>
+          <p style={{ marginTop: '1.2rem', fontSize: '0.85rem', opacity: 0.6, letterSpacing: '1px', textTransform: 'uppercase' }}>
             Swipe to explore
           </p>
         </div>
