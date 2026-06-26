@@ -29,11 +29,7 @@ export default function CelebrationMessage({
   }, [phase, photos.length]);
 
   return (
-    <div className="glass-panel animate-fade-in-scale" style={{ 
-      padding: '3rem', 
-      textAlign: 'center', 
-      maxWidth: '800px',
-      width: '90%',
+    <div className="glass-panel animate-fade-in-scale responsive-panel" style={{ 
       margin: '20px', 
       zIndex: 10,
       display: 'flex',
@@ -41,12 +37,12 @@ export default function CelebrationMessage({
       alignItems: 'center',
       transition: 'all 0.5s ease'
     }}>
-      <h1 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: '1.2' }}>
+      <h1 className="text-gradient responsive-title">
         Happy Birthday,<br/>{name}!
       </h1>
       
       {phase === 'gallery' && (
-        <p className="animate-fade-in" style={{ fontSize: '1.1rem', lineHeight: '1.6', opacity: 0.85, marginBottom: '2rem' }}>
+        <p className="animate-fade-in responsive-text">
           {message}
         </p>
       )}
