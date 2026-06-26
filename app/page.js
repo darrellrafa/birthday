@@ -75,7 +75,7 @@ export default function Home() {
         id="yt-player"
         width="10"
         height="10"
-        src={`https://www.youtube.com/embed/${youtubeVideoId}?enablejsapi=1&controls=0&origin=http://localhost:3000`}
+        src={`https://www.youtube.com/embed/${youtubeVideoId}?enablejsapi=1&controls=0`}
         title="YouTube Background Music"
         frameBorder="0"
         allow="autoplay; encrypted-media"

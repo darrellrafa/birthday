@@ -62,12 +62,11 @@ export default function CelebrationMessage({
           height: '340px',
           position: 'relative'
         }}>
-          <Image 
+          {/* Using a standard img tag here instead of Next.js Image to prevent Vercel optimization lag during 150ms rapid cycles */}
+          <img 
             src={photos[introIndex]} 
             alt="Rapid Memory" 
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </div>
       )}
@@ -102,6 +101,7 @@ export default function CelebrationMessage({
                   alt={`Memory ${index + 1}`} 
                   fill
                   style={{ objectFit: 'cover' }}
+                  unoptimized={true}
                 />
               </SwiperSlide>
             ))}
