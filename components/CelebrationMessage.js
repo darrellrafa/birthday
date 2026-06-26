@@ -1,13 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards, Navigation, Pagination } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import StackedCarousel from './StackedCarousel';
 
 export default function CelebrationMessage({ 
   name = "Friend", 
@@ -67,43 +61,17 @@ export default function CelebrationMessage({
         </div>
       )}
 
-      {/* Gallery Phase: Swiper Carousel */}
+      {/* Gallery Phase: Framer Motion Stacked Carousel */}
       {phase === 'gallery' && photos.length > 0 && (
         <div className="animate-fade-in" style={{ 
           width: '100%', 
           maxWidth: '256px', 
           marginTop: '0.8rem' 
         }}>
-          <Swiper
-            effect={'cards'}
-            grabCursor={true}
-            modules={[EffectCards, Navigation, Pagination]}
-            navigation={true}
-            pagination={{ clickable: true }}
-            className="mySwiper"
-            style={{ padding: '16px 0' }}
-          >
-            {photos.map((src, index) => (
-              <SwiperSlide key={index} style={{
-                borderRadius: '16px',
-                overflow: 'hidden',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5)',
-                aspectRatio: '3/4',
-                position: 'relative',
-                background: '#1a0505'
-              }}>
-                <Image 
-                  src={src} 
-                  alt={`Memory ${index + 1}`} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  unoptimized={true}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <StackedCarousel photos={photos} />
+          
           <p style={{ marginTop: '1.2rem', fontSize: '0.85rem', opacity: 0.6, letterSpacing: '1px', textTransform: 'uppercase' }}>
-            Swipe to explore
+            Swipe cards to explore
           </p>
         </div>
       )}
